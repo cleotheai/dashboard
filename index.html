@@ -39,7 +39,6 @@
     align-items: center;
     gap: 8px;
   }
-  .card-title .icon { font-size: 18px; }
   .wind-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -90,8 +89,6 @@
   .stats-row:last-child { border-bottom: none; }
   .stat-label { font-size: 14px; color: #94a3b8; }
   .stat-value { font-size: 14px; font-weight: 600; color: #e2e8f0; text-align: right; }
-  .stat-value.warning { color: #f59e0b; }
-  .stat-value.danger { color: #ef4444; }
   .alert-box {
     background: #1e293b;
     border-radius: 8px;
@@ -101,8 +98,8 @@
     margin-top: 8px;
     border-left: 3px solid #38bdf8;
   }
-  .alert-box.warn { border-left-color: #f59e0b; color: #fbbf24; }
   .alert-box.ok { border-left-color: #22c55e; color: #86efac; }
+  .alert-box.warn { border-left-color: #f59e0b; color: #fbbf24; }
   .review-item {
     background: #0f172a;
     border-radius: 8px;
@@ -112,9 +109,6 @@
     line-height: 1.5;
     border: 1px solid #1e293b;
   }
-  .review-item .review-title { font-weight: 600; color: #e2e8f0; margin-bottom: 4px; }
-  .review-item .review-meta { color: #64748b; font-size: 12px; margin-bottom: 6px; }
-  .review-item .review-content { color: #cbd5e1; }
   .empty-reviews {
     color: #64748b;
     font-size: 13px;
@@ -144,65 +138,29 @@
 <div class="container">
   <h1>🤿 Dive Bermuda — Morning Dashboard</h1>
 
-  <!-- Weather Card -->
   <div class="card">
     <div class="card-title"><span class="icon">🌤️</span> Weather Forecast</div>
 
-    <div class="day-header">Saturday 19th</div>
-    <div class="wind-grid">
-      <div class="wind-cell"><div class="time">4 AM</div><div class="val">9</div><div class="gust">gust 10</div><div class="dir">ENE</div></div>
-      <div class="wind-cell"><div class="time">6 AM</div><div class="val">8</div><div class="gust">gust 10</div><div class="dir">ENE</div></div>
-      <div class="wind-cell"><div class="time">8 AM</div><div class="val">7</div><div class="gust">gust 8</div><div class="dir">ENE</div></div>
-      <div class="wind-cell"><div class="time">10 AM</div><div class="val">6</div><div class="gust">gust 8</div><div class="dir">ENE</div></div>
-      <div class="wind-cell"><div class="time">12 PM</div><div class="val">6</div><div class="gust">gust 7</div><div class="dir">ENE</div></div>
-    </div>
-    <div class="wind-grid">
-      <div class="wind-cell"><div class="time">2 PM</div><div class="val">4</div><div class="gust">gust 5</div><div class="dir">ENE</div></div>
-      <div class="wind-cell"><div class="time">4 PM</div><div class="val">3</div><div class="gust">gust 4</div><div class="dir">ENE</div></div>
-      <div class="wind-cell"><div class="time">6 PM</div><div class="val">2</div><div class="gust">gust 3</div><div class="dir">NE</div></div>
-      <div class="wind-cell"><div class="time">8 PM</div><div class="val">6</div><div class="gust">gust 6</div><div class="dir">W</div></div>
-      <div class="wind-cell"><div class="time">10 PM</div><div class="val">1</div><div class="gust">gust 2</div><div class="dir">W</div></div>
-    </div>
+    <div class="day-header">Sunday 20th</div>
+    <div class="wind-grid"><div class="wind-cell"><div class="time">4 AM</div><div class="val">5</div><div class="gust">gust 5</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">6 AM</div><div class="val">5</div><div class="gust">gust 7</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">8 AM</div><div class="val">5</div><div class="gust">gust 9</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">10 AM</div><div class="val">7</div><div class="gust">gust 7</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">12 PM</div><div class="val">11</div><div class="gust">gust 12</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">2 PM</div><div class="val">6</div><div class="gust">gust 6</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">4 PM</div><div class="val">8</div><div class="gust">gust 8</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">6 PM</div><div class="val">7</div><div class="gust">gust 8</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">8 PM</div><div class="val">7</div><div class="gust">gust 8</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">10 PM</div><div class="val">8</div><div class="gust">gust 9</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time"></div><div class="val"></div><div class="gust">gust </div><div class="dir"></div></div></div>
 
-    <div class="day-header" style="margin-top:14px">Sunday 20th</div>
-    <div class="wind-grid">
-      <div class="wind-cell"><div class="time">4 AM</div><div class="val">3</div><div class="gust">gust 4</div><div class="dir">WNW</div></div>
-      <div class="wind-cell"><div class="time">6 AM</div><div class="val">4</div><div class="gust">gust 5</div><div class="dir">WSW</div></div>
-      <div class="wind-cell"><div class="time">8 AM</div><div class="val">4</div><div class="gust">gust 5</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">10 AM</div><div class="val">5</div><div class="gust">gust 6</div><div class="dir">SSW</div></div>
-      <div class="wind-cell"><div class="time">12 PM</div><div class="val">4</div><div class="gust">gust 5</div><div class="dir">SSW</div></div>
-    </div>
-    <div class="wind-grid">
-      <div class="wind-cell"><div class="time">2 PM</div><div class="val">5</div><div class="gust">gust 6</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">4 PM</div><div class="val">6</div><div class="gust">gust 7</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">6 PM</div><div class="val">7</div><div class="gust">gust 7</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">8 PM</div><div class="val">7</div><div class="gust">gust 8</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">10 PM</div><div class="val">11</div><div class="gust">gust 13</div><div class="dir">SSW</div></div>
-    </div>
+    <div class="day-header" style="margin-top:14px">Monday 21th</div>
+    <div class="wind-grid"><div class="wind-cell"><div class="time">12 AM</div><div class="val">L - 9:53 AM / 0.5m</div><div class="gust">gust 8</div><div class="dir">ENE</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div></div>
 
-    <div class="stats-row"><span class="stat-label">Wave height</span><span class="stat-value">0.7–0.8 m</span></div>
-    <div class="stats-row"><span class="stat-label">Tide</span><span class="stat-value">H 3:29 PM / L 8:29 AM</span></div>
-    <div class="stats-row"><span class="stat-label">Temperature</span><span class="stat-value">H 29° / L 26°</span></div>
-    <div class="stats-row"><span class="stat-label">Humidity</span><span class="stat-value">80%</span></div>
-    <div class="alert-box ok">All clear — no 17+ knot winds forecast beyond tomorrow</div>
+    <div class="stats-row"><span class="stat-label">Tide</span><span class="stat-value">Tide</span></div>
+    <div class="stats-row"><span class="stat-label">Temperature</span><span class="stat-value">Temperature</span></div>
+    <div class="stats-row"><span class="stat-label">Humidity</span><span class="stat-value">Humidity</span></div>
+    <div class="alert-box">Wind watch data not available</div>
   </div>
 
-  <!-- Reviews Card -->
   <div class="card">
     <div class="card-title"><span class="icon">🐠</span> Dive Reviews</div>
-    <div class="stats-row"><span class="stat-label">TripAdvisor reviews stored</span><span class="stat-value">4 reviews</span></div>
-    <div class="stats-row"><span class="stat-label">Last TripAdvisor fetch</span><span class="stat-value">Sep 18, 2026</span></div>
-    <div class="stats-row"><span class="stat-label">Days without new review</span><span class="stat-value">1 day</span></div>
-    <div class="stats-row"><span class="stat-label">Google rating (Somerset)</span><span class="stat-value">★ 4.9 / 42 reviews</span></div>
-    <div style="margin-top: 12px;">
-      <div class="badge">No new reviews to show — all caught up</div>
-    </div>
+    <div class="empty-reviews">✨ No new reviews overnight — same great crew, same great dives. Nothing to catch up on today.</div>
   </div>
 
-  <!-- Footer -->
   <div class="footer">
     Standalone dashboard · Data from weather project &amp; TripAdvisor tracking<br>
-    Generated: today
+    Generated: Monday September 21, 2026 at 11:28
   </div>
 </div>
 </body>
