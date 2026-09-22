@@ -200,6 +200,21 @@
     gap: 6px;
     overflow-x: auto;
     padding-bottom: 4px;
+    margin: 0 -4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: #2d3140 transparent;
+  }
+  .forecast-columns::-webkit-scrollbar {
+    height: 4px;
+  }
+  .forecast-columns::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .forecast-columns::-webkit-scrollbar-thumb {
+    background: #2d3140;
+    border-radius: 2px;
   }
   .wind-slot {
     flex: 0 0 72px;
@@ -769,7 +784,7 @@
     </div>
 
   <div class="footer">
-    Cleo's dashboard · Updated: Tuesday September 22, 2026 at 20:09
+    Cleo's dashboard · Updated: Tuesday September 22, 2026 at 20:15
   </div>
 </div>
 
