@@ -212,44 +212,72 @@
     padding: 6px 8px;
     background: #f8fafc;
     border-radius: 6px;
-    font-size: 12px;
-    gap: 8px;
+    font-size: 11px;
+    gap: 4px;
+    font-family: 'Courier New', monospace;
   }
   .forecast-row:nth-child(odd) {
     background: #fef9e7;
   }
+  .fc-date {
+    font-weight: 600;
+    color: #64748b;
+    min-width: 28px;
+    text-align: center;
+    font-size: 10px;
+  }
   .fc-time {
     font-weight: 500;
     color: #475569;
-    min-width: 52px;
+    min-width: 44px;
     font-size: 11px;
   }
   .fc-wind {
-    font-weight: 600;
+    font-weight: 700;
     color: #1a1a2e;
-    min-width: 40px;
+    min-width: 32px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .fc-gust {
+    font-weight: 400;
+    color: #94a3b8;
+    min-width: 36px;
+    text-align: center;
+    font-size: 10px;
   }
   .wind-unit {
     font-weight: 400;
     color: #94a3b8;
-    font-size: 10px;
-    margin-left: 2px;
+    font-size: 9px;
+    margin-left: 1px;
   }
   .fc-dir {
     color: #3b82f6;
-    font-weight: 500;
-    min-width: 36px;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
     font-size: 11px;
   }
-  .fc-temp {
-    color: #f59e0b;
-    font-weight: 600;
-    min-width: 28px;
-    font-size: 12px;
+  .fc-wave-dir {
+    color: #06b6d4;
+    font-weight: 500;
+    min-width: 40px;
+    text-align: center;
+    font-size: 10px;
   }
-  .fc-cloud {
-    margin-left: auto;
-    font-size: 14px;
+  .fc-wave {
+    color: #0ea5e9;
+    font-weight: 600;
+    min-width: 30px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .wave-unit {
+    font-weight: 400;
+    color: #94a3b8;
+    font-size: 9px;
+    margin-left: 1px;
   }
   .no-data {
     color: #94a3b8;
@@ -510,7 +538,7 @@
         <div class="mini-day">
           <span class="mini-dayname">Tue</span>
           <span class="mini-icon">⛅</span>
-          <span class="mini-temp">14°</span>
+          <span class="mini-temp">16°</span>
         </div>
         <div class="mini-day">
           <span class="mini-dayname">Wed</span>
@@ -529,11 +557,110 @@
         </div></div>
 
       <div class="forecast-table">
-        <div class="forecast-day-header"> 0th.</div>
-        <div class="forecast-rows"><div class="no-data">No wind data available</div></div>
+        <div class="forecast-day-header">Tuesday 22th.</div>
+        <div class="forecast-rows">
+              <div class="forecast-row">
+                <span class="fc-date">22</span>
+                <span class="fc-time">9 PM</span>
+                <span class="fc-wind">8 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">9 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">0.8 <span class="wave-unit">m</span></span>
+              </div></div>
 
-        <div class="forecast-day-header" style="margin-top:12px"> 0th.</div>
-        <div class="forecast-rows"><div class="no-data">No wind data available</div></div>
+        <div class="forecast-day-header" style="margin-top:12px">Wednesday 23th.</div>
+        <div class="forecast-rows">
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">4 AM</span>
+                <span class="fc-wind">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">11 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">0.7 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">6 AM</span>
+                <span class="fc-wind">9 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">0.7 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">8 AM</span>
+                <span class="fc-wind">9 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">0.7 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">10 AM</span>
+                <span class="fc-wind">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">0.8 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">12 PM</span>
+                <span class="fc-wind">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">11 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">0.8 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">2 PM</span>
+                <span class="fc-wind">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">11 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">1.5 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">4 PM</span>
+                <span class="fc-wind">10 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">11 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">1.4 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">6 PM</span>
+                <span class="fc-wind">11 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">12 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">1.4 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">8 PM</span>
+                <span class="fc-wind">11 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">12 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">1.4 <span class="wave-unit">m</span></span>
+              </div>
+              <div class="forecast-row">
+                <span class="fc-date">23</span>
+                <span class="fc-time">10 PM</span>
+                <span class="fc-wind">11 <span class="wind-unit">kn</span></span>
+                <span class="fc-gust">12 <span class="wind-unit">kn</span></span>
+                <span class="fc-dir">SSW</span>
+                <span class="fc-wave-dir">SSW</span>
+                <span class="fc-wave">1.3 <span class="wave-unit">m</span></span>
+              </div></div>
       </div>
 
       <div class="weather-extra">
@@ -636,7 +763,7 @@
     </div>
 
   <div class="footer">
-    Cleo's dashboard · Updated: Tuesday September 22, 2026 at 19:28
+    Cleo's dashboard · Updated: Tuesday September 22, 2026 at 19:48
   </div>
 </div>
 
