@@ -6,74 +6,161 @@
 <title>Dive Bermuda — Morning Dashboard</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; padding: 16px; min-width: 320px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 16px;
+    min-width: 320px;
+  }
   .container { max-width: 480px; margin: 0 auto; }
-  h1 { font-size: 20px; color: #38bdf8; text-align: center; margin-bottom: 16px; letter-spacing: 0.5px; }
-  .card { background: #1e293b; border-radius: 12px; padding: 16px; margin-bottom: 14px; border: 1px solid #334155; }
-  .card-title { font-size: 14px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-  .card-title .icon { font-size: 18px; }
-  .wind-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 10px; }
-  .wind-cell { background: #0f172a; border-radius: 8px; padding: 8px 4px; text-align: center; border: 1px solid #1e293b; }
-  .wind-cell .time { font-size: 10px; color: #64748b; margin-bottom: 4px; }
-  .wind-cell .val { font-size: 14px; font-weight: 700; color: #e2e8f0; }
-  .wind-cell .gust { font-size: 10px; color: #f59e0b; margin-top: 2px; }
-  .wind-cell .dir { font-size: 9px; color: #38bdf8; margin-top: 2px; text-transform: uppercase; }
-  .day-header { font-size: 13px; font-weight: 600; color: #38bdf8; margin-bottom: 10px; text-align: center; }
-  .stats-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1e293b; }
+  h1 {
+    font-size: 20px;
+    color: #38bdf8;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .card {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+    border: 1px solid #334155;
+  }
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .wind-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .wind-cell {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 8px 4px;
+    text-align: center;
+    border: 1px solid #1e293b;
+  }
+  .wind-cell .time {
+    font-size: 10px;
+    color: #64748b;
+    margin-bottom: 4px;
+  }
+  .wind-cell .val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e2e8f0;
+  }
+  .wind-cell .gust {
+    font-size: 10px;
+    color: #f59e0b;
+    margin-top: 2px;
+  }
+  .wind-cell .dir {
+    font-size: 9px;
+    color: #38bdf8;
+    margin-top: 2px;
+    text-transform: uppercase;
+  }
+  .day-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #1e293b;
+  }
   .stats-row:last-child { border-bottom: none; }
   .stat-label { font-size: 14px; color: #94a3b8; }
   .stat-value { font-size: 14px; font-weight: 600; color: #e2e8f0; text-align: right; }
-  .alert-box { background: #1e293b; border-radius: 8px; padding: 10px 12px; font-size: 13px; color: #94a3b8; margin-top: 8px; border-left: 3px solid #38bdf8; }
+  .alert-box {
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    border-left: 3px solid #38bdf8;
+  }
   .alert-box.ok { border-left-color: #22c55e; color: #86efac; }
-  .review-item { background: #0f172a; border-radius: 8px; padding: 10px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; border: 1px solid #1e293b; }
-  .empty-reviews { color: #64748b; font-size: 13px; text-align: center; padding: 12px; }
-  .footer { text-align: center; font-size: 11px; color: #475569; margin-top: 16px; padding-top: 8px; border-top: 1px solid #1e293b; }
-  .badge { display: inline-block; background: #334155; color: #94a3b8; border-radius: 12px; padding: 2px 8px; font-size: 11px; font-weight: 500; }
+  .alert-box.warn { border-left-color: #f59e0b; color: #fbbf24; }
+  .review-item {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    border: 1px solid #1e293b;
+  }
+  .empty-reviews {
+    color: #64748b;
+    font-size: 13px;
+    text-align: center;
+    padding: 12px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #475569;
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid #1e293b;
+  }
+  .badge {
+    display: inline-block;
+    background: #334155;
+    color: #94a3b8;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 500;
+  }
 </style>
 </head>
 <body>
 <div class="container">
   <h1>🤿 Dive Bermuda — Morning Dashboard</h1>
+
   <div class="card">
     <div class="card-title"><span class="icon">🌤️</span> Weather Forecast</div>
-    <div class="day-header">Monday 21</div>
-    <div class="wind-grid">
-      <div class="wind-cell"><div class="time">4 AM</div><div class="val">7</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">7 AM</div><div class="val">9</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">10 AM</div><div class="val">9</div><div class="gust">gust 10</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">1 PM</div><div class="val">10</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">4 PM</div><div class="val">9</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">7 PM</div><div class="val">8</div><div class="gust">gust 10</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">10 PM</div><div class="val">8</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time"></div><div class="val"></div><div class="gust">gust </div><div class="dir"></div></div>
-      <div class="wind-cell"><div class="time"></div><div class="val"></div><div class="gust">gust </div><div class="dir"></div></div>
-      <div class="wind-cell"><div class="time"></div><div class="val"></div><div class="gust">gust </div><div class="dir"></div></div>
-    </div>
-    <div class="day-header" style="margin-top:14px">Tuesday 22</div>
-    <div class="wind-grid">
-      <div class="wind-cell"><div class="time">12 AM</div><div class="val">8</div><div class="gust">gust 10</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">4 AM</div><div class="val">8</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">7 AM</div><div class="val">9</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">10 AM</div><div class="val">9</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">1 PM</div><div class="val">9</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">4 PM</div><div class="val">9</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">7 PM</div><div class="val">9</div><div class="gust">gust 11</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time">10 PM</div><div class="val">11</div><div class="gust">gust 13</div><div class="dir">S</div></div>
-      <div class="wind-cell"><div class="time"></div><div class="val"></div><div class="gust">gust </div><div class="dir"></div></div>
-      <div class="wind-cell"><div class="time"></div><div class="val"></div><div class="gust">gust </div><div class="dir"></div></div>
-    </div>
-    <div class="stats-row"><span class="stat-label">Tide</span><span class="stat-value"></span></div>
-    <div class="stats-row"><span class="stat-label">Temperature</span><span class="stat-value"></span></div>
-    <div class="stats-row"><span class="stat-label">Humidity</span><span class="stat-value"></span></div>
-    <div class="alert-box ok">All clear — no 17+ knot winds forecast beyond tomorrow</div>
+
+    <div class="day-header"></div>
+    <div class="wind-grid"><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div></div>
+
+    <div class="day-header" style="margin-top:14px"></div>
+    <div class="wind-grid"><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div><div class="wind-cell"><div class="time">—</div><div class="val">—</div></div></div>
+
+    <div class="stats-row"><span class="stat-label">Tide</span><span class="stat-value">Tide</span></div>
+    <div class="stats-row"><span class="stat-label">Temperature</span><span class="stat-value">Temperature</span></div>
+    <div class="stats-row"><span class="stat-label">Humidity</span><span class="stat-value">Humidity</span></div>
+    <div class="alert-box">Wind watch data not available</div>
   </div>
+
   <div class="card">
     <div class="card-title"><span class="icon">🐠</span> Dive Reviews</div>
     <div class="empty-reviews">✨ No new reviews overnight — same great crew, same great dives. Nothing to catch up on today.</div>
   </div>
+
   <div class="footer">
     Standalone dashboard · Data from weather project &amp; TripAdvisor tracking<br>
-    Generated: Monday September 21, 2026 at 20:32
+    Generated: Tuesday September 22, 2026 at 06:00
   </div>
 </div>
 </body>
