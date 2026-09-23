@@ -189,26 +189,16 @@
     margin-top: 4px;
     width: 100%;
   }
-  .forecast-day-header {
-    font-size: 13px;
-    font-weight: 600;
-    color: #60a5fa;
-    margin-bottom: 8px;
-    text-align: left;
+  .weather-module {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   .forecast-columns {
     display: flex;
     gap: 6px;
-    overflow-x: auto;
     padding-bottom: 4px;
-    margin: 0 -4px;
-    padding-left: 4px;
-    padding-right: 4px;
-    scrollbar-width: thin;
-    scrollbar-color: #2d3140 transparent;
-  }
-  .forecast-columns::-webkit-scrollbar {
-    height: 4px;
+    min-width: max-content;
   }
   .forecast-columns::-webkit-scrollbar-track {
     background: transparent;
@@ -750,7 +740,7 @@
     </div>
 
   <div class="footer">
-    Cleo's dashboard · Updated: Tuesday September 22, 2026 at 21:07
+    Cleo's dashboard · Updated: Tuesday September 22, 2026 at 21:09
   </div>
 </div>
 
